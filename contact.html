@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/png" href="assets/images/favico.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — M Naim Zomaddar</title>
+
+<script>
+  (function () {
+    var saved = localStorage.getItem('theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css" />
+<link rel="stylesheet" href="assets/css/theme-toggle.css" />
+<link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<main>
+  <section class="page-hero wrap">
+    <div class="eyebrow mono"><span class="dot"></span> /contact</div>
+    <h1>Tell us what you're working with.</h1>
+    <p>A site to fix, a redesign, or something brand new describe it below and we'll reply within a day.</p>
+  </section>
+
+  <section class="wrap">
+    <div class="contact-info">
+      <div class="card">
+        <span class="path mono">/contact/email</span>
+        <h3>Email</h3>
+        <p>wpexpert.naim@gmail.com</p>
+      </div>
+      <div class="card">
+        <span class="path mono">/contact/phone</span>
+        <h3>Phone</h3>
+        <p>+880 1764-805320</p>
+      </div>
+      <div class="card">
+        <span class="path mono">/contact/hours</span>
+        <h3>Response time</h3>
+        <p>Within 24 hours, Sat–Thu</p>
+      </div>
+    </div>
+
+    <form data-contact-form class="form-grid" style="max-width:720px; margin:0 auto;"
+          action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div>
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+      </div>
+      <div class="full">
+        <label for="service">What do you need?</label>
+        <select id="service" name="service">
+          <option>New website build</option>
+          <option>Website redesign</option>
+          <option>Third-party site customization</option>
+          <option>Maintenance / bug fix</option>
+          <option>E-commerce website</option>
+          <option>Travel agency website</option>
+        </select>
+      </div>
+      <div class="full">
+        <label for="message">Project details</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <div class="full">
+        <button type="submit" class="btn btn-primary">Send message</button>
+        <p data-form-status style="margin-top:12px; font-size:0.88rem; color:var(--text-muted);"></p>
+      </div>
+    </form>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
+<script src="assets/js/partials.js"></script>
+<script src="assets/js/theme-toggle.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

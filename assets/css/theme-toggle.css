@@ -1,0 +1,142 @@
+/* ============================================
+   THEME TOGGLE — color tokens + switch styling
+   Link this AFTER style.css so it can override.
+   ============================================ */
+
+:root {
+  /* Light mode (default) */
+  --bg: #f6f5fa;
+  --bg-elevated: #ffffff;
+  --text: #181626;
+  --text-muted: #66637a;
+  --border: #e3e1ec;
+  --accent: #5b5bf0;
+  --accent-2: #9b5bf0;
+  --accent-deep: #4040c4;
+  --accent-soft: #ecebfb;
+  --accent-text: #ffffff;
+  --accent-grad: linear-gradient(135deg, var(--accent), var(--accent-2));
+
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --btn-glass-grad: linear-gradient(135deg, rgba(91, 91, 240, 0.82), rgba(155, 91, 240, 0.82));
+
+  --shadow-sm: 0 1px 2px rgba(24, 22, 38, 0.05), 0 1px 1px rgba(24, 22, 38, 0.03);
+  --shadow-md: 0 10px 28px rgba(91, 91, 240, 0.12), 0 2px 8px rgba(24, 22, 38, 0.05);
+
+  --theme-transition: background-color 0.4s ease, color 0.4s ease,
+    border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+[data-theme="dark"] {
+  --bg: #110f1c;
+  --bg-elevated: #181527;
+  --text: #ece9f7;
+  --text-muted: #9a96b3;
+  --border: #2a2640;
+  --accent: #8b8bff;
+  --accent-2: #c08bff;
+  --accent-soft: #211c3a;
+  --accent-text: #11091f;
+  --accent-grad: linear-gradient(135deg, var(--accent), var(--accent-2));
+
+  --glass-bg: rgba(24, 21, 39, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --btn-glass-grad: linear-gradient(135deg, rgba(139, 139, 255, 0.82), rgba(192, 139, 255, 0.82));
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 14px 32px rgba(139, 139, 255, 0.18), 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+body,
+header,
+footer,
+main,
+section,
+.card,
+.btn,
+input,
+textarea {
+  transition: var(--theme-transition);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ============================================
+   THE SWITCH — sun morphs into crescent moon
+   ============================================ */
+
+.theme-switch {
+  --size: 42px;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  flex: none;
+  transition: var(--theme-transition), transform 0.2s ease;
+}
+
+.theme-switch:hover {
+  transform: scale(1.06);
+}
+
+.theme-switch:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.theme-switch svg {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+  stroke: var(--text);
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+
+.theme-switch .icon-sun {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.theme-switch .icon-moon {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.5);
+}
+
+[data-theme="dark"] .theme-switch .icon-sun {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.5);
+}
+
+[data-theme="dark"] .theme-switch .icon-moon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-switch svg,
+  body,
+  header,
+  footer,
+  main,
+  section,
+  .card,
+  .btn {
+    transition: none !important;
+  }
+}

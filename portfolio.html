@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portfolio — M Naim Zomaddar | WordPress Developer</title>
+<meta name="description" content="Selected WordPress and web development projects — business sites, e-commerce stores, landing pages, blogs, and custom builds." />
+
+<script>
+  (function () {
+    var saved = localStorage.getItem('theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css" />
+<link rel="stylesheet" href="assets/css/theme-toggle.css" />
+<link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<main>
+  <section class="page-hero wrap">
+    <div class="eyebrow mono"><span class="dot"></span> /portfolio</div>
+    <h1>A look at recent work.</h1>
+    <p>Filter by category to see relevant examples — every project listed includes the stack used and a live link.</p>
+  </section>
+
+  <section class="wrap">
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="business">Business Websites</button>
+      <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+      <button class="filter-btn" data-filter="landing">Landing Pages</button>
+      <button class="filter-btn" data-filter="blog">Blogs</button>
+      <button class="filter-btn" data-filter="custom">Custom Websites</button>
+    </div>
+
+    <div class="work-grid">
+      <div class="work-card" data-category="business">
+        <div class="work-thumb mono" data-img-preview>
+          <img loading="lazy" decoding="async" src="assets/portfolio/local-business.jpg" onerror="this.onerror=null; this.src='assets/images/founder-placeholder.svg';" alt="Local business website">
+        </div>
+        <div class="work-info">
+          <div class="tag-row"><span class="work-tag">WordPress</span><span class="work-tag">Elementor</span></div>
+          <h3>Local business website</h3>
+          <p>Service pages, booking inquiry form, and a custom-built theme.</p>
+          <div class="work-actions">
+            <a href="#" class="btn btn-ghost btn-sm">Live Demo</a>
+            <a href="#" class="btn btn-ghost btn-sm" data-case-study="local-business">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-card" data-category="ecommerce">
+        <div class="work-thumb mono" data-img-preview>
+          <img loading="lazy" decoding="async" src="assets/portfolio/clothing-store.jpg" onerror="this.onerror=null; this.src='assets/images/founder-placeholder.svg';" alt="Online clothing store">
+        </div>
+        <div class="work-info">
+          <div class="tag-row"><span class="work-tag">WooCommerce</span><span class="work-tag">WordPress</span></div>
+          <h3>Online clothing store</h3>
+          <p>Full WooCommerce catalog with custom checkout styling.</p>
+          <div class="work-actions">
+            <a href="#" class="btn btn-ghost btn-sm">Live Demo</a>
+            <a href="#" class="btn btn-ghost btn-sm" data-case-study="clothing-store">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-card" data-category="landing">
+        <div class="work-thumb mono" data-img-preview>
+          <img loading="lazy" decoding="async" src="assets/portfolio/landing-page.jpg" onerror="this.onerror=null; this.src='assets/images/founder-placeholder.svg';" alt="Product launch landing page">
+        </div>
+        <div class="work-info">
+          <div class="tag-row"><span class="work-tag">HTML/CSS</span><span class="work-tag">JS</span></div>
+          <h3>Product launch landing page</h3>
+          <p>Single-page design built for an ad campaign with a countdown timer.</p>
+          <div class="work-actions">
+            <a href="#" class="btn btn-ghost btn-sm">Live Demo</a>
+            <a href="#" class="btn btn-ghost btn-sm" data-case-study="landing-page">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-card" data-category="blog">
+        <div class="work-thumb mono" data-img-preview>
+          <img loading="lazy" decoding="async" src="assets/portfolio/tech-blog.jpg" onerror="this.onerror=null; this.src='assets/images/founder-placeholder.svg';" alt="Personal tech blog">
+        </div>
+        <div class="work-info">
+          <div class="tag-row"><span class="work-tag">WordPress</span></div>
+          <h3>Personal tech blog</h3>
+          <p>Custom blog theme with category filtering and reading-time estimates.</p>
+          <div class="work-actions">
+            <a href="#" class="btn btn-ghost btn-sm">Live Demo</a>
+            <a href="#" class="btn btn-ghost btn-sm" data-case-study="tech-blog">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-card" data-category="custom">
+        <div class="work-thumb mono" data-img-preview>
+          <img loading="lazy" decoding="async" src="assets/portfolio/booking-system.jpg" onerror="this.onerror=null; this.src='assets/images/founder-placeholder.svg';" alt="Custom booking system">
+        </div>
+        <div class="work-info">
+          <div class="tag-row"><span class="work-tag">PHP</span><span class="work-tag">JS</span></div>
+          <h3>Custom booking system</h3>
+          <p>Hand-coded scheduling tool built outside of WordPress for a client's specific workflow.</p>
+          <div class="work-actions">
+            <a href="#" class="btn btn-ghost btn-sm">Live Demo</a>
+            <a href="#" class="btn btn-ghost btn-sm" data-case-study="booking-system">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-card" data-category="business">
+        <div class="work-thumb mono" data-img-preview>
+          <img loading="lazy" decoding="async" src="assets/portfolio/consulting-redesign.jpg" onerror="this.onerror=null; this.src='assets/images/founder-placeholder.svg';" alt="Consulting firm redesign">
+        </div>
+        <div class="work-info">
+          <div class="tag-row"><span class="work-tag">WordPress</span><span class="work-tag">Redesign</span></div>
+          <h3>Consulting firm redesign</h3>
+          <p>Rebuilt an outdated site with a modern layout and faster load time.</p>
+          <div class="work-actions">
+            <a href="#" class="btn btn-ghost btn-sm">Live Demo</a>
+            <a href="#" class="btn btn-ghost btn-sm" data-case-study="consulting-redesign">Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <p style="text-align:center; color:var(--text-muted); font-size:0.86rem; margin-top:24px;">
+      Replace these placeholder cards with your real projects — screenshots, links, and case study pages.
+    </p> -->
+  </section>
+
+  <section class="wrap">
+    <div class="cta glass">
+      <h2>Like what you see?</h2>
+      <p>Let's talk about what you're trying to build.</p>
+      <a href="contact.html" class="btn btn-primary">Start a project</a>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+
+<!-- Case study modal (shared, content filled in by JS) -->
+<div class="case-modal" data-case-modal>
+  <div class="case-modal-backdrop" data-case-close></div>
+  <div class="case-modal-content">
+    <button class="case-modal-close" data-case-close aria-label="Close case study">&times;</button>
+    <div class="case-modal-body" data-case-body></div>
+  </div>
+</div>
+
+<!-- Image preview modal (shared) -->
+<div class="image-modal" data-image-modal>
+  <div class="image-modal-backdrop" data-image-close></div>
+  <div class="image-modal-content">
+    <button class="image-modal-close" data-image-close aria-label="Close preview">&times;</button>
+    <img data-image-modal-img src="" alt="Project preview">
+  </div>
+</div>
+
+<script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
+<script src="assets/js/partials.js"></script>
+<script src="assets/js/theme-toggle.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

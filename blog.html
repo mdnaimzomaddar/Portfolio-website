@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/png" href="assets/images/favico.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blog — M Naim Zomaddar | WordPress Developer</title>
+<meta name="description" content="WordPress tips, SEO, web design, programming tutorials, and CSE notes from M Naim Zomaddar." />
+
+<script>
+  (function () {
+    var saved = localStorage.getItem('theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css" />
+<link rel="stylesheet" href="assets/css/theme-toggle.css" />
+<link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<main>
+  <section class="page-hero wrap">
+    <div class="eyebrow mono"><span class="dot"></span> /blog</div>
+    <h1>Notes on WordPress, web dev, and CSE.</h1>
+    <p>Short, practical write-ups from client work and coursework no fluff.</p>
+  </section>
+
+  <section class="wrap">
+    <div class="blog-toolbar">
+      <div class="filter-bar" style="margin-bottom:0; justify-content:flex-start;">
+        <button class="filter-btn active" data-blog-filter="all">All</button>
+        <button class="filter-btn" data-blog-filter="wordpress">WordPress</button>
+        <button class="filter-btn" data-blog-filter="webdev">Web Development</button>
+        <button class="filter-btn" data-blog-filter="seo">SEO</button>
+        <button class="filter-btn" data-blog-filter="programming">Programming</button>
+        <button class="filter-btn" data-blog-filter="cse">CSE Notes</button>
+        <button class="filter-btn" data-blog-filter="tutorials">Tutorials</button>
+      </div>
+      <div class="search-box">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+        <input type="text" placeholder="Search posts..." data-blog-search />
+      </div>
+    </div>
+
+    <div class="blog-grid">
+      <div class="blog-card" data-blog-category="wordpress" data-reveal>
+        <div class="blog-thumb mono">post-cover.png</div>
+        <div class="blog-info">
+          <div class="blog-meta"><span class="cat">WordPress</span><span>·</span><span>5 min read</span></div>
+          <h3>5 WordPress plugins I actually install on every client site</h3>
+          <p>The short list of plugins that earn their place, and why I skip most "must-have" lists.</p>
+          <a href="#" class="btn btn-ghost btn-sm">Read more</a>
+        </div>
+      </div>
+
+      <div class="blog-card" data-blog-category="seo" data-reveal>
+        <div class="blog-thumb mono">post-cover.png</div>
+        <div class="blog-info">
+          <div class="blog-meta"><span class="cat">SEO</span><span>·</span><span>6 min read</span></div>
+          <h3>On-page SEO checklist before you launch</h3>
+          <p>The technical and content checks I run through before any site goes live.</p>
+          <a href="#" class="btn btn-ghost btn-sm">Read more</a>
+        </div>
+      </div>
+
+      <div class="blog-card" data-blog-category="webdev" data-reveal>
+        <div class="blog-thumb mono">post-cover.png</div>
+        <div class="blog-info">
+          <div class="blog-meta"><span class="cat">Web Development</span><span>·</span><span>4 min read</span></div>
+          <h3>Dark mode without the flash of the wrong theme</h3>
+          <p>The small inline script that fixes the most common dark-mode bug.</p>
+          <a href="#" class="btn btn-ghost btn-sm">Read more</a>
+        </div>
+      </div>
+
+      <div class="blog-card" data-blog-category="programming" data-reveal>
+        <div class="blog-thumb mono">post-cover.png</div>
+        <div class="blog-info">
+          <div class="blog-meta"><span class="cat">Programming</span><span>·</span><span>7 min read</span></div>
+          <h3>BFS vs DFS: when to actually use each one</h3>
+          <p>A practical breakdown, not just the textbook definition.</p>
+          <a href="#" class="btn btn-ghost btn-sm">Read more</a>
+        </div>
+      </div>
+
+      <div class="blog-card" data-blog-category="cse" data-reveal>
+        <div class="blog-thumb mono">post-cover.png</div>
+        <div class="blog-info">
+          <div class="blog-meta"><span class="cat">CSE Notes</span><span>·</span><span>5 min read</span></div>
+          <h3>Dynamic Programming: my notes after finally "getting it"</h3>
+          <p>The mental model that made DP click after weeks of confusion.</p>
+          <a href="#" class="btn btn-ghost btn-sm">Read more</a>
+        </div>
+      </div>
+
+      <div class="blog-card" data-blog-category="tutorials" data-reveal>
+        <div class="blog-thumb mono">post-cover.png</div>
+        <div class="blog-info">
+          <div class="blog-meta"><span class="cat">Tutorials</span><span>·</span><span>8 min read</span></div>
+          <h3>Setting up WooCommerce from zero, step by step</h3>
+          <p>A full walkthrough from install to your first live product.</p>
+          <a href="#" class="btn btn-ghost btn-sm">Read more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="newsletter-band">
+      <h2>Get new posts in your inbox</h2>
+      <p>WordPress tips and CSE notes, sent occasionally no spam.</p>
+      <form class="newsletter-form" data-newsletter-form>
+        <input type="email" placeholder="you@email.com" required />
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+      <p data-newsletter-status style="margin-top:12px; font-size:0.85rem;"></p>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
+<script src="assets/js/partials.js"></script>
+<script src="assets/js/theme-toggle.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
